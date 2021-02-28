@@ -1,6 +1,10 @@
 const theme = {
   background: 'rgb(18, 18, 20)',
-  white: '#fff',
+  main: 'rgb(225, 225, 230)',
+  white: 'rgb(255, 255, 255)',
+  primary: 'rgb(32, 32, 36)',
+  rocket: 'rgb(130, 87, 229)',
+  button: 'rgb(41, 41, 46)',
 };
 
 export default theme;
