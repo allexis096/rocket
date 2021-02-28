@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { FiMail } from 'react-icons/fi';
-import { FaLock } from 'react-icons/fa';
+import { FaLock, FaGithub } from 'react-icons/fa';
 
 import * as S from '../styles/pages';
 
@@ -32,8 +32,11 @@ export default function Home() {
             <div />
           </S.Divisor>
           <S.Github>
-            Ou entre com
-            <button type="button">GITHUB</button>
+            <span>Ou entre com</span>
+            <button type="button">
+              <FaGithub size={20} />
+              GITHUB
+            </button>
           </S.Github>
         </S.Form>
       </S.Right>

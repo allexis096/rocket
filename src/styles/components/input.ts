@@ -16,16 +16,16 @@ export const Container = styled.div`
   .eye-password {
     left: unset;
     right: 15px;
-    color: ${props => props.theme.primary};
+    color: ${({ theme }) => theme.rocket};
     transition: color 0.2s ease 0s;
     cursor: pointer;
   }
 
   input {
-    background-color: ${props => props.theme.background};
-    border: 1px solid ${props => props.theme.background};
+    background-color: ${({ theme }) => theme.background};
+    border: 1px solid ${({ theme }) => theme.background};
     font-size: 16px;
-    color: ${props => props.theme.main};
+    color: ${({ theme }) => theme.main};
     padding: 0 1em 0 2.65em;
     border-radius: 5px;
     height: 50px;

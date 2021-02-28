@@ -4,6 +4,7 @@ const theme = {
   white: 'rgb(255, 255, 255)',
   primary: 'rgb(32, 32, 36)',
   rocket: 'rgb(130, 87, 229)',
+  rocketHover: 'rgb(118, 93, 207)',
   button: 'rgb(41, 41, 46)',
 };
 

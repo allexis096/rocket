@@ -8,5 +8,6 @@ declare module 'styled-components' {
     primary: string;
     rocket: string;
     button: string;
+    rocketHover: string;
   }
 }
