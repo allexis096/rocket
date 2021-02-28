@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "discover",
+      "text": "Comunidade e conteúdo gratuito que te levarão para o próximo nível em programação"
+    },
+    {
+      "id": 2,
+      "name": "gostack",
+      "text": "Treinamento imersivo nas tecnologias mais modernas de desenvolvimento web e mobile"
+    }
+  ]
+}

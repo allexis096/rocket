@@ -3,7 +3,7 @@ import * as S from '../styles/components/cardCourses';
 interface ICardProps {
   image: React.ReactNode;
   text: string;
-  name: 'discover' | 'gostack';
+  name: string;
 }
 
 export default function CardCourses({ image, text, name }: ICardProps) {
