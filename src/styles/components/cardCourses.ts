@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface CardProps {
-  name: 'discover' | 'gostack';
+  name: string;
 }
 
 export const Container = styled.div<CardProps>`
