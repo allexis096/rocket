@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+// import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 
 import Discover from '../../public/discover.svg';
@@ -10,22 +10,28 @@ import Loading from '../components/Loading/dashboard';
 
 import * as S from '../styles/pages/dashboard';
 
-type Course = {
+type CourseProps = {
   id: number;
   name: string;
   text: string;
 };
 
-type CourseProps = {
-  course: Course[];
-};
-
-export default function Dashboard({ course }: CourseProps) {
+export default function Dashboard() {
   const [loading, setLoading] = useState(true);
+  const [course, setCourse] = useState<CourseProps[]>([]);
 
   useEffect(() => {
-    !course ? setLoading(true) : setLoading(false);
-  }, [course]);
+    (async () => {
+      setLoading(true);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API}/courses`
+      ).then(res => res.json());
+
+      setCourse(res);
+      setLoading(false);
+    })();
+  }, []);
+
   return (
     <>
       <Header />
@@ -51,18 +57,3 @@ export default function Dashboard({ course }: CourseProps) {
     </>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/courses`);
-  const course = await res.json();
-
-  if (!course) {
-    console.log('OW BURRAO, LIGA O SERVIDOR AI');
-  }
-
-  return {
-    props: {
-      course,
-    },
-  };
-};
