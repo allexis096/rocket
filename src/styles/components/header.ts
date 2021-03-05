@@ -47,6 +47,7 @@ export const NavGroup = styled.nav`
   }
 
   img {
+    position: relative;
     cursor: pointer;
     margin-right: 20px;
     width: 45px;
@@ -54,6 +55,16 @@ export const NavGroup = styled.nav`
     border-radius: 50%;
     border: 1px solid ${({ theme }) => theme.main};
   }
+`;
+
+export const Notification = styled.div`
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #e8485c;
+  right: 50px;
+  top: 20px;
+  border-radius: 50%;
 `;
 
 export const Buttons = styled.div`
@@ -73,5 +84,61 @@ export const Buttons = styled.div`
     svg {
       color: ${({ theme }) => theme.main};
     }
+  }
+`;
+
+export const Modal = styled.div`
+  position: absolute;
+  right: 0px;
+  top: 85px;
+  margin-right: 35px;
+  width: 235px;
+  height: 260px;
+  border-radius: 5px;
+  background: ${({ theme }) => theme.primary};
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 29px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 8px 8px;
+    border-color: transparent transparent ${({ theme }) => theme.primary};
+  }
+`;
+
+export const ButtonAction = styled.button`
+  color: ${({ theme }) => theme.main};
+  font-size: 0.9rem;
+  background: ${({ theme }) => theme.primary};
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.primaryHover};
+  }
+
+  span {
+    margin-left: 15px;
+  }
+
+  svg {
+    margin-left: 5px;
   }
 `;

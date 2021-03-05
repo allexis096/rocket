@@ -1,4 +1,3 @@
-// import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 
 import Discover from '../../public/discover.svg';
