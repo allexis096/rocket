@@ -27,6 +27,8 @@ module.exports = {
         'plugin:prettier/recommended', // Prettier plugin
       ],
       rules: {
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'jsx-a11y/no-noninteractive-element-interactions': 'off',
         // We will use TypeScript's types for component props instead
         'react/prop-types': 'off',
 
