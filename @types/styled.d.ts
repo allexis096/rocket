@@ -6,6 +6,7 @@ declare module 'styled-components' {
     main: string;
     white: string;
     primary: string;
+    primaryHover: string;
     rocket: string;
     button: string;
     rocketHover: string;
