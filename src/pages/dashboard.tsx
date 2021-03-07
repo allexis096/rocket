@@ -1,58 +1,38 @@
-import { useEffect, useState } from 'react';
-
-import Discover from '../../public/discover.svg';
-import GoStack from '../../public/goStack.svg';
-
-import CardCourses from '../components/cardCourses';
+import { AiFillPlayCircle } from 'react-icons/ai';
 import Header from '../components/header';
-import Loading from '../components/Loading/dashboard';
 
 import * as S from '../styles/pages/dashboard';
 
-type CourseProps = {
-  id: number;
-  name: string;
-  text: string;
-};
-
 export default function Dashboard() {
-  const [loading, setLoading] = useState(true);
-  const [course, setCourse] = useState<CourseProps[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      setLoading(true);
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API}/courses`
-      ).then(res => res.json());
-
-      setCourse(res);
-      setLoading(false);
-    })();
-  }, []);
-
   return (
     <>
       <Header />
-      <S.Courses>
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
-            {course.map(courses => (
-              <CardCourses
-                key={courses.id}
-                name={courses.name}
-                image={
-                  (courses.name === 'discover' && <Discover />) ||
-                  (courses.name === 'gostack' && <GoStack />)
-                }
-                text={courses.text}
-              />
-            ))}
-          </>
-        )}
-      </S.Courses>
+      <S.SectionContainer>
+        <S.CardOne>
+          <div>
+            <h2>Olá, Allexis</h2>
+            <p>
+              Seja bem vindo de volta. Que tal continuar assistindo sua aula de
+              onde parou?
+            </p>
+          </div>
+          <span>#NeverStopLearning</span>
+        </S.CardOne>
+        <S.CardTwo>
+          <main>
+            <h3>Tipando objetos e vetores</h3>
+            <span>GoStack 2020 / TypeScript</span>
+          </main>
+          <div>
+            CONTINUAR ASSISTINDO
+            <AiFillPlayCircle
+              size={36}
+              color="rgb(130, 87, 230)"
+              style={{ marginLeft: 10 }}
+            />
+          </div>
+        </S.CardTwo>
+      </S.SectionContainer>
     </>
   );
 }
