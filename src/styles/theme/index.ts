@@ -1,6 +1,7 @@
 const theme = {
   background: 'rgb(18, 18, 20)',
   main: 'rgb(225, 225, 230)',
+  mainHover: 'rgb(115, 115, 128)',
   white: 'rgb(255, 255, 255)',
   primary: 'rgb(32, 32, 36)',
   primaryHover: 'rgb(28, 28, 31)',
